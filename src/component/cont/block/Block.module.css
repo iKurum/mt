@@ -1,0 +1,49 @@
+/* Cont.js */
+.block {
+  width: calc(100vw - 2rem);
+  position: absolute;
+  left: 0;
+  padding: 10px 1rem 0;
+  background-color: rgb(244, 244, 244);
+  box-shadow: 0 -10px 20px rgb(244, 244, 244);
+}
+
+.block>div {
+  background-color: #ffffff;
+  height: 90px;
+  margin: 1rem 0;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+/* Takeaway.js */
+.takeaway h2 {
+  position: relative;
+}
+
+.takeaway h2::after {
+  content: '外卖';
+  font-size: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 0 2px;
+  transform: translateY(-50%);
+  background-color: rgb(253, 190, 1);
+}
+
+.takeaway p {
+  margin: 4px 0;
+}
+
+.takeaway p:nth-of-type(1)>span {
+  border-left: 1px solid #000000;
+}
+
+.takeaway p:nth-of-type(2)::before {
+  content: '优惠';
+  background-color: red;
+  color: #ffffff;
+  padding: 0 2px;
+  margin-right: 4px;
+}

@@ -1,0 +1,12 @@
+.Mod {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.Mod>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

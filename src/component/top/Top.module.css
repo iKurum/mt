@@ -1,0 +1,26 @@
+.hotSearch {
+  display: flex;
+  margin: 5rem 0 1rem;
+}
+
+.hotSearch>ul {
+  display: flex;
+}
+
+.hotSearch li {
+  padding-right: 1rem;
+  margin-right: 1rem;
+  border-right: 1px solid rgba(0, 0, 0, .6);
+}
+
+.hotSearch li:last-child {
+  border: none;
+}
+
+.hotKey i {
+  font-size: 30px;
+}
+
+.hotKey span {
+  font-size: 14px;
+}

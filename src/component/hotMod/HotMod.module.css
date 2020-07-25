@@ -1,0 +1,19 @@
+.hotBox {
+  background-color: #ffffff;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.hotBox>div:first-child i {
+  font-size: 50px;
+}
+
+.hotBox>div:last-child {
+  flex-wrap: wrap;
+}
+
+.hotBox>div:last-child i {
+  padding: 0 20px;
+  font-size: 30px;
+}

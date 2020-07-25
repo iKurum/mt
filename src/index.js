@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import Search from './component/search/Search';
+import Top from './component/top/Top';
+import HotMod from './component/hotMod/HotMod';
+import Cont from './component/cont/Cont';
+
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Search />
+    <Top />
+    <HotMod />
+    <Cont />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,0 +1,16 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: 120px;
+}
+
+.banner>div {
+  position: absolute;
+  display: flex;
+}
+
+.banner img {
+  width: calc(100vw - 2rem);
+  border-radius: 30px;
+  margin-right: 2px;
+}
