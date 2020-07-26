@@ -11,31 +11,38 @@ const hotMod = [
 ];
 
 const hotMore = [
-  { 'class': 'iconfont icon-zhanwei', 'name': '打车' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '丽人/美发' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '周边游/旅游' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '借钱/信用卡' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '火车票/机票' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '免费领水果' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '袋鼠快跑' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '超市/药店' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '充值中心' },
-  { 'class': 'iconfont icon-gengduo', 'name': '更多' }
+  [
+    { 'class': 'iconfont icon-zhanwei', 'name': '打车' },
+    { 'class': 'iconfont icon-zhanwei', 'name': '丽人/美发' },
+    { 'class': 'iconfont icon-zhanwei', 'name': '周边游/旅游' },
+    { 'class': 'iconfont icon-zhanwei', 'name': '借钱/信用卡' },
+    { 'class': 'iconfont icon-zhanwei', 'name': '火车票/机票' }
+  ],
+  [
+    { 'class': 'iconfont icon-zhanwei', 'name': '免费领水果' },
+    { 'class': 'iconfont icon-zhanwei', 'name': '袋鼠快跑' },
+    { 'class': 'iconfont icon-zhanwei', 'name': '超市/药店' },
+    { 'class': 'iconfont icon-zhanwei', 'name': '充值中心' },
+    { 'class': 'iconfont icon-gengduo', 'name': '更多' }
+  ]
 ];
 
 function HotMod() {
   const modRef = useRef();
-  const moreRef = useRef();
+  const moreRef_f = useRef();
+  const moreRef_t = useRef();
 
   useEffect(() => {
     modRef.current.setHotMod(hotMod);
-    moreRef.current.setHotMod(hotMore);
+    moreRef_f.current.setHotMod(hotMore[0]);
+    moreRef_t.current.setHotMod(hotMore[1]);
   })
 
   return (
     <div className={Css.hotBox}>
       <Mod ref={modRef} cRef={modRef} />
-      <Mod ref={moreRef} cRef={moreRef} />
+      <Mod ref={moreRef_f} cRef={moreRef_f} />
+      <Mod ref={moreRef_t} cRef={moreRef_t} />
     </div>
   );
 }

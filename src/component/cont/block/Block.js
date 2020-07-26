@@ -1,7 +1,7 @@
 import React from 'react';
 import Takeaway from './Takeaway';
 import DisTakeaway from './DisTakeaway';
-import { BlockList } from '../../../assets/blockList';
+import { BlockList } from '../../../blockList';
 import Css from './Block.module.css';
 
 function Block() {

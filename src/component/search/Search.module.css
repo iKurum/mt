@@ -26,6 +26,10 @@
   z-index: 100;
 }
 
+.topCon>div:first-child {
+  min-width: 41px;
+}
+
 .topCon>i {
   padding: 10px;
 }

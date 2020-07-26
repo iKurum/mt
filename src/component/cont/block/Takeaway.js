@@ -1,12 +1,14 @@
 import React from 'react';
+import BlockImg from './BlockImg';
 import Css from './Block.module.css';
 
 function Takeaway(props) {
   const { info } = props;
-  console.log(info);
+
   return (
     <div className={Css.takeaway}>
       <h2>{info.title}</h2>
+      <span className={Css.close}>x</span>
       <p>
         <span>{info.info.score}分</span>
         <span>月售{info.info.sales}</span>
@@ -20,6 +22,7 @@ function Takeaway(props) {
           info.comments.map((v, i) => <span key={i}>{v}</span>)
         }
       </p>
+      <BlockImg items={info.items} />
     </div>
   );
 }
