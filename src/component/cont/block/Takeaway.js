@@ -12,7 +12,15 @@ function Takeaway(props) {
       <p>
         <span>{info.info.score}分</span>
         <span>月售{info.info.sales}</span>
-        <span>配送￥{info.info.delivery}</span>
+        <span>
+          {
+            info.info.delivery === 0
+              ?
+              `配送￥${info.info.delivery}`
+              :
+              '免费配送'
+          }
+        </span>
         <span>人均￥{info.info.per}</span>
         <span>{info.info.deliveryTime}</span>
       </p>
