@@ -37,7 +37,7 @@ function Banner() {
       <div ref={img} style={{ left: `${left}px` }}>
         {
           image.map((v, i) => {
-            return <img src={`assets/banner/${v}`} key={i} alt='' />
+            return <img src={`./assets/banner/${v}`} key={i} alt='' />
           })
         }
       </div>

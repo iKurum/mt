@@ -18,7 +18,7 @@ function BlockImg(props) {
                             ref={imgBox}
                             key={i}
                             style={{
-                                backgroundImage: `url(assets/${v.img})`,
+                                backgroundImage: `url(./assets/${v.img})`,
                                 height: `${h}px`
                             }}
                         >
