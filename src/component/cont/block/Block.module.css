@@ -18,6 +18,7 @@
 .blockImg {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .blockImg>div {
@@ -27,7 +28,6 @@
   background-repeat: no-repeat;
   margin: 0 1rem;
   border-radius: 10px;
-  /* overflow: hidden; */
 }
 
 .price {
@@ -40,7 +40,7 @@
   align-items: flex-end;
   color: #ffffff;
   box-shadow: 0 -30px 20px rgba(0, 0, 0, .3) inset;
-  border-radius: 0 0 10px 10px;
+  border-radius: 10px;
 }
 
 .price span {
@@ -60,23 +60,42 @@
   bottom: -20px;
   left: 50%;
   transform: translate(-50%);
-  width: calc(100% - 1rem);
+  width: calc(100% - 2rem);
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* Takeaway.js */
-.takeaway {
+/* Takeaway.js and DisTakeaway.js*/
+.takeaway,
+.disTakeaway {
   padding: 6px 6px 2rem 6px;
 }
 
-.takeaway>h2 {
+.takeaway>h2,
+.disTakeaway>div>h2 {
   position: relative;
   font-size: 18px;
 }
 
+.takeaway>p,
+.disTakeaway>div>p {
+  margin: 10px 0;
+  position: relative;
+}
+
+.close {
+  display: inline-block;
+  padding: 1px 5px;
+  height: 8px;
+  line-height: 6px;
+  border: 1px solid gray;
+  border-radius: 40px;
+  color: gray;
+}
+
+/* Takeaway.js */
 .takeaway>h2::after {
   content: '外卖';
   font-size: 12px;
@@ -87,22 +106,14 @@
   background-color: rgb(253, 190, 1);
 }
 
-.takeaway>span {
+.takeaway .close {
   position: absolute;
   right: 2rem;
   top: 2.2rem;
-  display: inline-block;
-  padding: 0 8px;
-  height: 14px;
-  line-height: 10px;
-  border: 1px solid gray;
-  border-radius: 40px;
-  color: gray;
 }
 
-.takeaway>p {
-  margin: 10px 0;
-  position: relative;
+.takeaway>p:nth-of-type(1)>span:nth-of-type(1) {
+  color: rgb(254, 155, 8);
 }
 
 .takeaway>p:nth-of-type(1)>span::before {
@@ -136,7 +147,7 @@
   display: inline-block;
   padding: 2px 4px;
   margin: 0 4px;
-  height: 12px;
+  height: 10px;
   line-height: 10px;
   border: 1px solid #000000;
   border-radius: 4px;
@@ -144,4 +155,79 @@
 
 .takeaway>p:nth-of-type(3)>span:first-child {
   margin: 0;
+}
+
+/* DisTakeaway.js */
+.disTakeaway {
+  padding-bottom: 1rem;
+  display: flex;
+}
+
+.disTakeaway>div:nth-of-type(1)>p:nth-of-type(1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.disTakeaway>div:first-child {
+  width: 64%;
+}
+
+.disTakeaway>div:last-child {
+  flex-grow: 1;
+}
+
+.dtPrice {
+  position: relative;
+  vertical-align: text-bottom;
+}
+
+.dtPrice>span:first-child {
+  color: rgb(255, 101, 3);
+  font: 20px bold;
+}
+
+.dtPrice>span:first-child>span {
+  font: 14px bold;
+}
+
+.dtPrice>span:nth-of-type(2) {
+  padding-left: 3px;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.dtPrice>span:nth-of-type(3) {
+  font-size: 15px;
+  background-color: rgb(254, 80, 56);
+  padding: 2px 8px 2px 2px;
+  margin-left: 16px;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  top: -2px;
+  color: #ffffff;
+}
+
+.dtPrice>span:nth-of-type(3)::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -10px;
+  top: 0;
+  border-right: 10px solid rgb(254, 80, 56);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+.dtPrice>span:last-child {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dtPrice .close {
+  margin-left: 10px;
 }

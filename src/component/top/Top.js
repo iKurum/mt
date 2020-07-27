@@ -4,10 +4,10 @@ import Css from './Top.module.css';
 
 const hotList = ['下午茶', '蔬菜', '限时秒杀', '川西坝子', '火锅'];
 const hotMod = [
-  { 'class': 'iconfont icon-richscan_icon', 'name': '扫一扫' },
-  { 'class': 'iconfont icon-fukuanma', 'name': '付款码' },
-  { 'class': 'iconfont icon-zihangche', 'name': '骑车' },
-  { 'class': 'iconfont icon-chagongjiao', 'name': '查公交' }
+  { 'class': '#icon-richscan_icon', 'name': '扫一扫' },
+  { 'class': '#icon-fukuanma', 'name': '付款码' },
+  { 'class': '#icon-zihangche', 'name': '骑车' },
+  { 'class': '#icon-chagongjiao', 'name': '查公交' }
 ];
 
 function Top() {

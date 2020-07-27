@@ -16,7 +16,9 @@ const Top = React.forwardRef((_, cRef) => {
         hot.map((v, i) => {
           return (
             <div className={Css.Mod} key={i}>
-              <i className={v.class}></i>
+              <svg className='icon' aria-hidden='true'>
+                <use xlinkHref={v.class}></use>
+              </svg>
               <span>{v.name}</span>
             </div>
           );

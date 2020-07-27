@@ -30,8 +30,13 @@
   min-width: 41px;
 }
 
-.topCon>i {
+.topCon .icon {
   padding: 10px;
+  font-size: 14px;
+}
+
+.topCon .icon:last-child {
+  padding-right: 0;
 }
 
 .search {
@@ -40,7 +45,7 @@
   margin: 0 1rem;
 }
 
-.search>i {
+.search .icon {
   position: absolute;
   left: 10px;
   top: 50%;

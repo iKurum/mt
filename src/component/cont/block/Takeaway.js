@@ -22,7 +22,7 @@ function Takeaway(props) {
           info.comments.map((v, i) => <span key={i}>{v}</span>)
         }
       </p>
-      <BlockImg items={info.items} />
+      <BlockImg items={info.items} isTake={info.takeaway} />
     </div>
   );
 }

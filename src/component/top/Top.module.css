@@ -17,8 +17,8 @@
   border: none;
 }
 
-.hotKey i {
-  font-size: 30px;
+.hotKey svg {
+  font-size: 40px;
 }
 
 .hotKey span {

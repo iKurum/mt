@@ -3,27 +3,27 @@ import Mod from '../../hooks/mod/Mod';
 import Css from './HotMod.module.css';
 
 const hotMod = [
-  { 'class': 'iconfont icon-zhanwei', 'name': '外卖' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '美食' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '酒店住宿' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '休闲/玩乐' },
-  { 'class': 'iconfont icon-zhanwei', 'name': '电影/演出' }
+  { 'class': '#icon-waimai', 'name': '外卖' },
+  { 'class': '#icon-meishi', 'name': '美食' },
+  { 'class': '#icon-jiudianzhusu', 'name': '酒店住宿' },
+  { 'class': '#icon-ziyuan', 'name': '休闲/玩乐' },
+  { 'class': '#icon-dianying2', 'name': '电影/演出' }
 ];
 
 const hotMore = [
   [
-    { 'class': 'iconfont icon-zhanwei', 'name': '打车' },
-    { 'class': 'iconfont icon-zhanwei', 'name': '丽人/美发' },
-    { 'class': 'iconfont icon-zhanwei', 'name': '周边游/旅游' },
-    { 'class': 'iconfont icon-zhanwei', 'name': '借钱/信用卡' },
-    { 'class': 'iconfont icon-zhanwei', 'name': '火车票/机票' }
+    { 'class': '#icon-dache_fill', 'name': '打车' },
+    { 'class': '#icon-meifa', 'name': '丽人/美发' },
+    { 'class': '#icon-chaoshigouwu', 'name': '超市/药店' },
+    { 'class': '#icon-xinyongqia', 'name': '借钱/信用卡' },
+    { 'class': '#icon-jipiaohuochepiao', 'name': '火车票/机票' }
   ],
   [
-    { 'class': 'iconfont icon-zhanwei', 'name': '免费领水果' },
-    { 'class': 'iconfont icon-zhanwei', 'name': '袋鼠快跑' },
-    { 'class': 'iconfont icon-zhanwei', 'name': '超市/药店' },
-    { 'class': 'iconfont icon-zhanwei', 'name': '充值中心' },
-    { 'class': 'iconfont icon-gengduo', 'name': '更多' }
+    { 'class': '#icon-guoshuSVG', 'name': '免费领水果' },
+    { 'class': '#icon-chongzhizhongxin', 'name': '充值中心' },
+    { 'class': '#icon-gifts', 'name': '免费领福利' },
+    { 'class': '#icon-chongwu', 'name': '宠物' },
+    { 'class': '#icon-gengduo', 'name': '更多' }
   ]
 ];
 

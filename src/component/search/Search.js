@@ -9,11 +9,17 @@ function Search() {
         <p>阴 28℃</p>
       </div>
       <div className={Css.search}>
-        <i className="iconfont icon--search"></i>
+        <svg className={['icon', `${Css.icon}`].join(' ')} aria-hidden='true'>
+          <use xlinkHref='#icon--search'></use>
+        </svg>
         <input type='text' placeholder='书亦烧仙草(外卖满25减2)' />
       </div>
-      <i className="iconfont icon-huatong"></i>
-      <i className="iconfont icon-jiashang"></i>
+      <svg className={['icon', `${Css.icon}`].join(' ')} aria-hidden='true'>
+        <use xlinkHref='#icon-huatong'></use>
+      </svg>
+      <svg className={['icon', `${Css.icon}`].join(' ')} aria-hidden='true'>
+        <use xlinkHref='#icon-jiashang'></use>
+      </svg>
     </div>
   );
 }
