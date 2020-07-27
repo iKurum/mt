@@ -4,7 +4,6 @@ import Css from './Block.module.css';
 
 function DisTakeaway(props) {
   const { info } = props;
-  console.log(info);
 
   return (
     <div className={Css.disTakeaway}>

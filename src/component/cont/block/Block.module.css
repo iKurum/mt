@@ -89,7 +89,7 @@
   display: inline-block;
   padding: 1px 5px;
   height: 8px;
-  line-height: 6px;
+  line-height: 8px;
   border: 1px solid gray;
   border-radius: 40px;
   color: gray;
@@ -198,9 +198,10 @@
 }
 
 .dtPrice>span:nth-of-type(3) {
-  font-size: 15px;
+  display: inline-block;
+  font-size: 14px;
   background-color: rgb(254, 80, 56);
-  padding: 2px 8px 2px 2px;
+  padding: 0 8px 0 4px;
   margin-left: 16px;
   height: 20px;
   line-height: 20px;
@@ -217,8 +218,8 @@
   left: -10px;
   top: 0;
   border-right: 10px solid rgb(254, 80, 56);
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 }
 
 .dtPrice>span:last-child {

@@ -8,7 +8,6 @@ function BlockImg(props) {
 
     useEffect(() => {
         setH(imgBox.current.clientWidth);
-        console.log(imgBox.current.clientWidth);
     }, [])
     return (
         <div className={Css.blockImg}>
