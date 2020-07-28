@@ -8,7 +8,7 @@ import { loadContext } from './hooks/context';
 import './index.css';
 
 function App() {
-  const [ isBottom, setIsBottom ] = useState(false);
+  const [isBottom, setIsBottom] = useState(false);
   const app = useRef();
   const onScrollHandler = useCallback(e => {
     const [clientHeight, scrollHeight, scrollTop] =
@@ -17,7 +17,10 @@ function App() {
         e.path[0].scrollHeight,
         e.path[0].scrollTop
       ];
-    setIsBottom(clientHeight + scrollTop === scrollHeight);
+    if (scrollHeight - (clientHeight + scrollTop) < 10) {
+      e.path[0].scrollTo(0, scrollHeight - clientHeight - 10);
+    }
+    setIsBottom(scrollHeight - (clientHeight + scrollTop) < 10);
   }, []);
 
   useEffect(() => {
