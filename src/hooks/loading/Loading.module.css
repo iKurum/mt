@@ -1,0 +1,19 @@
+.loading {
+  background-color: rgb(244, 244, 244);
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 30px;
+  animation: loadingMove 2s linear infinite;
+}
+
+@keyframes loadingMove {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}

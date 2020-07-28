@@ -46,12 +46,12 @@
 .price span {
   display: inline-block;
   margin: 0 4px 6px 2px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .price span:last-child {
   margin: 0 0 10px 0;
-  font-size: 12px;
+  font-size: 10px;
   text-decoration: line-through;
 }
 
