@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "12477575",
+      "name": "Loading Indicator",
+      "font_class": "LoadingIndicator",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
       "icon_id": "2147110",
       "name": "充值中心",
       "font_class": "chongzhizhongxin",
