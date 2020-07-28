@@ -3,7 +3,7 @@
   width: calc(100vw - 2rem);
   position: absolute;
   left: 0;
-  padding: 10px 1rem 0;
+  padding: 10px 1rem 1rem;
   background-color: rgb(244, 244, 244);
   box-shadow: 0 -10px 20px rgb(244, 244, 244);
 }
@@ -86,12 +86,11 @@
 }
 
 .close {
-  display: inline-block;
-  padding: 1px 5px;
-  height: 8px;
-  line-height: 8px;
+  padding: 0 6px;
+  height: 12px;
+  line-height: 12px;
   border: 1px solid gray;
-  border-radius: 40px;
+  border-radius: 6px;
   color: gray;
 }
 
@@ -177,35 +176,45 @@
   width: 64%;
 }
 
+.disTakeaway>div:first-child>div {
+  display: flex;
+  justify-content: center;
+}
+
 .disTakeaway>div:last-child {
   flex-grow: 1;
 }
 
 .dtPrice {
   position: relative;
+  flex-grow: 1;
   vertical-align: text-bottom;
+}
+
+.dtPrice + div {
+  margin: 0 1rem;
+  line-height: 20px;
 }
 
 .dtPrice>span:first-child {
   color: rgb(255, 101, 3);
-  font: 20px bold;
+  font: 16px bold;
 }
 
 .dtPrice>span:first-child>span {
-  font: 14px bold;
+  font: 12px bold;
 }
 
 .dtPrice>span:nth-of-type(2) {
-  padding-left: 3px;
-  font-size: 14px;
+  padding-left: 2px;
   text-decoration: line-through;
 }
 
 .dtPrice>span:nth-of-type(3) {
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   background-color: rgb(254, 80, 56);
-  padding: 0 8px 0 4px;
+  padding: 0 4px 0 2px;
   margin-left: 16px;
   height: 20px;
   line-height: 20px;
@@ -228,11 +237,11 @@
 
 .dtPrice>span:last-child {
   position: absolute;
-  right: 0;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.dtPrice .close {
-  margin-left: 10px;
+.disTakeaway .close {
+  position: relative;
+  top: 3px;
 }

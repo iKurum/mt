@@ -8,7 +8,7 @@ function Takeaway(props) {
   return (
     <div className={Css.takeaway}>
       <h2>{info.title}</h2>
-      <span className={Css.close}>x</span>
+      <div className={Css.close}>x</div>
       <p>
         <span>{info.info.score}分</span>
         <span>月售{info.info.sales}</span>

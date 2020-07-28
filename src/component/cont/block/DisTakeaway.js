@@ -10,18 +10,18 @@ function DisTakeaway(props) {
       <div>
         <h2>{info.title}</h2>
         <p>{info.comments}</p>
-        <p className={Css.dtPrice}>
-          <span>
-            <span>￥</span>
-            {info.items.price.a}
-          </span>
-          <span>￥{info.items.price.b}</span>
-          <span>{info.preferential}</span>
-          <span>
-            {info.distance}
-            <span className={Css.close}>x</span>
-          </span>
-        </p>
+        <div>
+          <p className={Css.dtPrice}>
+            <span>
+              <span>￥</span>
+              {info.items.price.a}
+            </span>
+            <span>￥{info.items.price.b}</span>
+            <span>{info.preferential}</span>
+          </p>
+          <div>{info.distance}</div>
+          <div className={Css.close}>x</div>
+        </div>
       </div>
       <BlockImg items={info.items} isTake={info.takeaway} />
     </div>
