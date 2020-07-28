@@ -20,7 +20,10 @@ function DisTakeaway(props) {
             <span>{info.preferential}</span>
           </p>
           <div>{info.distance}</div>
-          <div className={Css.close}>x</div>
+          <div
+            className={Css.close}
+            style={{ backgroundImage: 'url(./assets/close.png)' }}
+          ></div>
         </div>
       </div>
       <BlockImg items={info.items} isTake={info.takeaway} />
