@@ -3,14 +3,14 @@
   width: calc(100vw - 2rem);
   position: absolute;
   left: 0;
-  padding: 10px 1rem 1rem;
+  padding: 0 1rem 0;
   background-color: rgb(244, 244, 244);
   box-shadow: 0 -10px 20px rgb(244, 244, 244);
 }
 
 .block>div {
   background-color: #ffffff;
-  margin: 1rem 0;
+  margin: 1.8rem 0;
   border-radius: 10px;
 }
 
@@ -194,7 +194,6 @@
 
 .dtPrice + div {
   margin: 0 1rem;
-  line-height: 22px;
 }
 
 .dtPrice>span:first-child {
