@@ -10,6 +10,7 @@ function Block() {
   const [BlockList, setBlockList] = useState([]);
   const isload = useContext(loadContext);
   const load = useRef();
+
   const getData = useCallback(() => {
     fetch('blockList.json')
       .then(res => res.json())
