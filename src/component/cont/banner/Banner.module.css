@@ -31,6 +31,11 @@
   margin: 0 6px 10px;
   padding: 4px;
   border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.active {
+  background-color: rgb(237, 109, 61) !important;
 }
 
 @media screen and (min-width: 960px) {

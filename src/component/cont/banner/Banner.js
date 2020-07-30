@@ -6,9 +6,11 @@ let [s, num, l, h] = [image.length + 1, 0, 0, 0];
 let [startX, endX] = [0, 0];
 
 function Banner() {
+  const [active, setActive] = useState(0);
   const [isRun, setIsRun] = useState(true);
   const [left, setLeft] = useState(0);
   const img = useRef();
+  const ulRef = useRef();
 
   useEffect(() => {
     l = img.current.clientWidth / image.length;
@@ -19,17 +21,18 @@ function Banner() {
   useEffect(() => {
     if (isRun) {
       const t = setInterval(() => {
-        console.log(num, s);
         if (num < 0 || num >= s) {
           num = 0;
         }
-        num++;
 
         img.current.style.transition = 'all 1s ease';
-        if (num === 1) {
+        if (num === 0) {
           img.current.style.transition = 'none';
         }
-        setLeft(-l * (num - 1));
+        setActive(num === (s - 1) ? 0 : num);
+        setLeft(-l * num);
+
+        num++;
       }, 2000);
 
       return () => { clearInterval(t) };
@@ -47,12 +50,10 @@ function Banner() {
               alt=''
               onTouchStart={e => {
                 startX = e.touches[0].pageX;
-
                 setIsRun(false);
               }}
               onTouchMove={e => {
                 endX = e.touches[0].pageX;
-
                 img.current.style.transition = 'none';
                 if (endX - startX > 0) {
                   e.target.parentNode.style.left = `${
@@ -69,6 +70,7 @@ function Banner() {
                 // 右滑
                 if (endX - startX > l / 3 && left !== 0) {
                   e.target.parentNode.style.left = `${left + l}px`;
+                  setActive(num - 2);
                   num -= 2;
                 } else if (0 < endX - startX < l / 3) {
                   e.target.parentNode.style.left = `${left}px`;
@@ -77,7 +79,7 @@ function Banner() {
                 // 左滑
                 if (endX - startX < -l / 3) {
                   e.target.parentNode.style.left = `${left - l}px`;
-                  num++;
+                  setActive(num++);
                 } else if (-l / 3 < endX - startX < 0) {
                   e.target.parentNode.style.left = `${left}px`;
                 }
@@ -88,26 +90,9 @@ function Banner() {
         }
       </div>
       <div className={Css.numUl}>
-        <ul>
+        <ul ref={ulRef}>
           {
-            [...Array(s - 1)].map((_, i) => {
-              if (i === 0 && num === 5) {
-                return (
-                  <li
-                    key={i}
-                    style={{ backgroundColor: 'rgb(237, 109, 61)'}}
-                  ></li>
-                );
-              }
-              return (
-                <li
-                  key={i}
-                  style={{
-                    backgroundColor: i === (num - 1) ? 'rgb(237, 109, 61)' : '#ffffff'
-                  }}
-                ></li>
-              );
-            })
+            [...Array(s - 1)].map((_, i) => <li key={i} className={i === active ? Css.active : ''}></li>)
           }
         </ul>
       </div>
