@@ -90,14 +90,12 @@ function Banner() {
                   }
                 }
                 if (0 < endX - startX && endX - startX < (l / 3)) {
-                  e.target.parentNode.style.left = `${
-                    left === 0
-                      ?
-                      -l * (s - 1)
-                      :
-                      left
-                    }px`;
-                  num = s - 1;
+                  if (left === 0) {
+                    e.target.parentNode.style.left = `${-l * (s - 1)}px`;
+                    num = s - 1;
+                  } else {
+                    e.target.parentNode.style.left = `${left}px`;
+                  }
                 }
 
                 // 左滑
@@ -108,7 +106,7 @@ function Banner() {
                     num = 2;
                   } else {
                     e.target.parentNode.style.left = `${left - l}px`;
-                    setActive(num++);
+                    setActive(num > s - 2 ? 0 : num++);
                   }
                 }
                 if ((-l / 3) < endX - startX && endX - startX < 0) {
