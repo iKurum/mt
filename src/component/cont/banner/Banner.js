@@ -19,7 +19,8 @@ function Banner() {
   useEffect(() => {
     if (isRun) {
       const t = setInterval(() => {
-        if (num < 0) {
+        console.log(num, s);
+        if (num < 0 || num >= s) {
           num = 0;
         }
         num++;
@@ -29,10 +30,6 @@ function Banner() {
           img.current.style.transition = 'none';
         }
         setLeft(-l * (num - 1));
-
-        if (num === s) {
-          num = 0;
-        }
       }, 2000);
 
       return () => { clearInterval(t) };
@@ -49,21 +46,40 @@ function Banner() {
               key={i}
               alt=''
               onTouchStart={e => {
-                setIsRun(false);
                 startX = e.touches[0].pageX;
+
+                setIsRun(false);
               }}
               onTouchMove={e => {
                 endX = e.touches[0].pageX;
 
-                const m = left + endX - startX;
-                if (m <= 0 && num !== 0 && num !== 5) {
-                  e.target.parentNode.style.transition = 'all .2s ease';
-                  e.target.parentNode.style.left = `${m}px`;
+                img.current.style.transition = 'none';
+                if (endX - startX > 0) {
+                  e.target.parentNode.style.left = `${
+                    left === 0 ? left : left + endX - startX
+                    }px`;
+                } else if (endX - startX < 0) {
+                  e.target.parentNode.style.left = `${
+                    left === (-l * (s - 1)) ? left : left + endX - startX
+                    }px`;
                 }
               }}
-              onTouchEnd={() => {
-                if (endX - startX > 0) {
+              onTouchEnd={e => {
+                img.current.style.transition = 'all .5s ease';
+                // 右滑
+                if (endX - startX > l / 3 && left !== 0) {
+                  e.target.parentNode.style.left = `${left + l}px`;
                   num -= 2;
+                } else if (0 < endX - startX < l / 3) {
+                  e.target.parentNode.style.left = `${left}px`;
+                }
+
+                // 左滑
+                if (endX - startX < -l / 3) {
+                  e.target.parentNode.style.left = `${left - l}px`;
+                  num++;
+                } else if (-l / 3 < endX - startX < 0) {
+                  e.target.parentNode.style.left = `${left}px`;
                 }
                 setIsRun(true);
               }}

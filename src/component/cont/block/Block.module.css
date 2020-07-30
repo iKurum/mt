@@ -194,6 +194,8 @@
 
 .dtPrice + div {
   margin: 0 1rem;
+  position: relative;
+  top: 2px;
 }
 
 .dtPrice>span:first-child {
