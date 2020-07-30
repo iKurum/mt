@@ -56,33 +56,71 @@ function Banner() {
                 endX = e.touches[0].pageX;
                 img.current.style.transition = 'none';
                 if (endX - startX > 0) {
+                  // 右滑
                   e.target.parentNode.style.left = `${
-                    left === 0 ? left : left + endX - startX
+                    left === 0
+                      ?
+                      -l * (s - 1) + endX - startX
+                      :
+                      left + endX - startX
                     }px`;
                 } else if (endX - startX < 0) {
+                  // 左滑
                   e.target.parentNode.style.left = `${
-                    left === (-l * (s - 1)) ? left : left + endX - startX
+                    left === -l * (s - 1)
+                      ?
+                      endX - startX
+                      :
+                      left + endX - startX
                     }px`;
                 }
               }}
               onTouchEnd={e => {
-                img.current.style.transition = 'all .5s ease';
+                img.current.style.transition = 'all .2s ease';
                 // 右滑
-                if (endX - startX > l / 3 && left !== 0) {
-                  e.target.parentNode.style.left = `${left + l}px`;
-                  setActive(num - 2);
-                  num -= 2;
-                } else if (0 < endX - startX < l / 3) {
-                  e.target.parentNode.style.left = `${left}px`;
+                if (endX - startX > (l / 3)) {
+                  if (left === 0) {
+                    e.target.parentNode.style.left = `${-l * (s - 2)}px`;
+                    setActive(s - 2);
+                    num = s - 2;
+                  } else {
+                    e.target.parentNode.style.left = `${left + l}px`;
+                    setActive(num - 2);
+                    num -= 2;
+                  }
+                }
+                if (0 < endX - startX && endX - startX < (l / 3)) {
+                  e.target.parentNode.style.left = `${
+                    left === 0
+                      ?
+                      -l * (s - 1)
+                      :
+                      left
+                    }px`;
+                  num = s - 1;
                 }
 
                 // 左滑
-                if (endX - startX < -l / 3) {
-                  e.target.parentNode.style.left = `${left - l}px`;
-                  setActive(num++);
-                } else if (-l / 3 < endX - startX < 0) {
-                  e.target.parentNode.style.left = `${left}px`;
+                if (endX - startX < (-l / 3)) {
+                  if (left === -l * (s - 1)) {
+                    e.target.parentNode.style.left = `${-l}px`;
+                    setActive(1);
+                    num = 2;
+                  } else {
+                    e.target.parentNode.style.left = `${left - l}px`;
+                    setActive(num++);
+                  }
                 }
+                if ((-l / 3) < endX - startX && endX - startX < 0) {
+                  e.target.parentNode.style.left = `${
+                    left === -l * (s - 1) || 0
+                      ?
+                      0
+                      :
+                      left
+                    }px`;
+                }
+
                 setIsRun(true);
               }}
             />
